@@ -1,0 +1,55 @@
+// issues
+.list-wrapper{
+    @extend .wd-100;
+    // max-height: 470px;
+    // overflow: hidden auto;
+    padding-right: $one-s;
+    // @include scrollbar();
+    .each-list{
+        @extend .wd-100;
+        @extend .flex-start;
+        margin-bottom: $two-s;
+        padding-bottom: $two-s;
+        border-bottom: 1px solid $border;
+        a{
+            @extend .flex-start;
+        }
+    }
+    .list-icon{
+        width: 20px;
+        height: 20px;
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .list-item{
+        width: calc(100% - 35px - 8px);
+        float: left;
+        margin-left: $one-s;
+        // margin-top: $one-s;
+        .list-content{
+            @extend .wd-100;
+            font-size: $font-s;
+            color: $grey2;
+        }
+        .list-date{
+            @extend .wd-100;
+            margin-top: $one-s;
+            @extend .flex-center-space-between;
+            p{
+                font-size: 10px;
+                margin-bottom: 0px;
+                color: $grey4;
+            }
+        }
+        .list-add-option{
+            @extend .wd-100;
+            @extend .flex-center-start;
+            font-size: $font-s;
+            margin-top: $one-s;
+            color: $grey2;
+            cursor: pointer;
+        }
+    }
+}

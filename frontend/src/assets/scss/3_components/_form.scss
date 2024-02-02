@@ -1,0 +1,331 @@
+// Forms
+// 14281 - 27012021
+
+.form-group {
+  @extend .wd-100;
+  position: relative;
+  .control-label {
+    font-size: $font-s;
+    color: $grey2;
+    transition: all 0.2s;
+    &.material {
+      width: 85%;
+      margin-bottom: 0px;
+      // background: $white;
+      // position: absolute;
+      // top: 9px;
+      // left: 8px;
+      z-index: 1;
+      // padding: 0 $half-s;
+      transition: all 0.2s;
+      &:before{
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 7px;
+        z-index: -1;
+        left: 0;
+      }
+    }
+    &.focused {
+      color: $primaryblue;
+    }
+    &.error {
+      color: $dangeralert;
+    }
+    &.success {
+      color: $successalert;
+    }
+  }
+  &.material {
+    margin-bottom: $three-s;
+    &.no-margin {
+      margin-bottom: 0 !important;
+    }
+    &.open {
+      .control-label {
+        &.material {
+          width: auto;
+          // top: -12px;
+          // left: 10px;
+          // padding: $half-s $one-s;
+          font-size: $font-xs;
+          @include border-radius(2px 2px 0 0);
+        }
+      }
+    }
+  }
+  &.material-one {
+    margin-bottom: 0;
+    &.open {
+      .control-label {
+        &.material {
+          width: auto;
+          // top: -12px;
+          // left: 10px;
+          padding: $half-s $one-s;
+          font-size: $font-xs;
+          @include border-radius(2px 2px 0 0);
+        }
+      }
+    }
+  }
+
+  &.form-search {
+    .control-label {
+      &.material {
+        // top: 9px;
+      }
+    }
+  }
+  .form-control,
+  .form-search-select {
+    @extend .wd-100;
+    // background: $white;
+    font-weight: $font-regular;
+    height: auto;
+    color: $grey1;
+    border: 1px solid $border !important;
+    @include border-radius($half-s);
+    &.material {
+      @include border-radius($half-s !important);
+    }
+    &.size-s {
+      padding: 4px $one-s;
+      font-size: $font-xs;
+    }
+    &.size-m {
+      padding: $one-s $two-s;
+      font-size: $font-s;
+      line-height: 17px;
+      min-height: 35px;
+    }
+    &.size-l {
+      padding: $two-s;
+      font-size: $font-r;
+    }
+    &::placeholder {
+      color: $grey4;
+    }
+    &::-moz-placeholder {
+      color: $grey4;
+    }
+    &:-ms-input-placeholder {
+      color: $grey4;
+    }
+    &::-ms-input-placeholder {
+      color: $grey4;
+    }
+    &:focus {
+      border-color: $primaryblue !important;
+      outline: none;
+      @include box-shadow(none);
+    }
+    &.error {
+      border: 1px solid $dangeralert !important;
+      .select__control {
+        border: 1px solid $dangeralert !important;
+        &.select__control--is-focused {
+          border-color: transparent;
+        }
+      }
+    }
+    &.success {
+      border-color: $successalert !important;
+      .select__control {
+        border: 1px solid $successalert !important;
+        &.select__control--is-focused {
+          border-color: transparent;
+        }
+      }
+    }
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.9 !important;
+      background: $culturedwhite;
+    }
+  }
+  .form-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    & + input.form-control {
+      padding-right: 28px;
+    }
+  }
+  .input-caption {
+    @extend .wd-100;
+    font-size: $font-xxs;
+    margin-top: $half-s;
+    // position: absolute;
+    // top: auto;
+    // bottom: -20px;
+    // left: 0px;
+    color: $grey3;
+    @include transition(all 0.2s);
+    &.error {
+      color: $dangeralert;
+    }
+    &.success {
+      color: $successalert;
+    }
+  }
+  .form-search-select {
+    border: 1px solid transparent !important;
+    border-radius: $half-s;
+    &.error,
+    &.success {
+      border: 1px solid transparent !important;
+    }
+  }
+  select.form-control {
+    position: relative;
+    padding: $one-s $one-s $one-s $half-s !important;
+  }
+  .multiselect {
+    @extend .wd-100;
+    .btn {
+      margin-bottom: $one-s;
+    }
+  }
+  .select__control {
+    font-size: $font-xs;
+    border: 1px solid $border;
+    background: $white;
+    cursor: pointer;
+    @include border-radius($half-s);
+    padding: 0px $one-s;
+    min-height: 35px;
+    &.material {
+      @include border-radius($half-s $half-s 0 0);
+    }
+    &:hover {
+      outline: none;
+      border-color: $border;
+    }
+    &.select__control--is-focused {
+      border-color: $primaryblue;
+      @include box-shadow(none);
+    }
+    .select__value-container {
+      .select__placeholder {
+        color: $grey1;
+        margin: 0px;
+      }
+      .css-b8ldur-Input {
+        padding: 0px;
+        margin: 0px;
+      }
+      .select__single-value {
+        margin: 0;
+        padding: 0px;
+      }
+    }
+    .select__indicator-separator {
+      display: none;
+    }
+    .select__indicator {
+      padding: 2px;
+      svg {
+        width: 16px;
+        fill: $grey1;
+      }
+    }
+  }
+  .select__option {
+    font-size: $font-xs;
+    cursor: pointer;
+  }
+  .select__menu {
+    border: 1px solid $border;
+    @include box-shadow($box-shadow-dropdown);
+    z-index: 10;
+    min-width: max-content;
+  }
+}
+
+.search-input-div {
+  input {
+    padding-right: 26px !important;
+  }
+}
+
+.form-radio {
+  font-size: $font-s;
+  float: left;
+  margin-right: $two-s;
+  @extend .flex-center-start;
+  margin-bottom: $two-s;
+  cursor: pointer;
+  .control-label {
+    margin-bottom: 0;
+    margin-left: $one-s;
+  }
+}
+
+// Faq form
+.form-faq {
+  .form-search-select {
+    border: 0px !important;
+    &.success {
+      border: 0px !important;
+    }
+  }
+}
+
+.underlined {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+// Select with no border
+.select-noborder{
+  font-size: $font-s;
+  font-weight: $font-bold;
+  color: $grey1;
+  .form-group{
+    width: auto !important;
+  }
+  .select__control{
+    border: 0 !important;
+    font-size: $font-s;
+    font-weight: $font-bold;
+    padding: 0;
+    min-height: auto;
+  }
+  .select__value-container{
+    padding: 0;
+  }
+  .select__input-container{
+    padding: 0;
+    margin: 0;
+  }
+  .select__indicator{
+    padding: 0 !important;
+    svg{
+      width: 14px !important;
+    }
+  }
+  .form-search-select{
+    &.success, &.error{
+      border: 0 !important;
+      .select__control{
+        border: 0 !important;
+      }
+    }
+    .select__control--is-focused{
+      border: 0 !important;
+    }
+  }
+}
+
+.form-nomargin{
+  .form-group{
+    &.material{
+      margin-bottom: $two-s !important;
+    }
+  }
+}

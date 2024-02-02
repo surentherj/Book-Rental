@@ -1,0 +1,47 @@
+@import "../../assets/scss/1-tools/variables";
+.alert {
+  padding: 0.8rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  // background: $grey1;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.alert-primary {
+  background: $primaryblue;
+  color: #fff;
+}
+.alert-light {
+  background: $lightblue;
+  color: #333;
+}
+.alert-dark {
+  background: $darkblue;
+  color: #fff;
+}
+.alert-danger {
+  background: $alertred;
+  color: #fff;
+}
+.alert-success {
+  background: $successalert;
+  color: #fff;
+}
+.alert-white {
+  background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+}
+.alert-wrapper {
+  position: fixed;
+  top: 4rem;
+  right: 2rem;
+  display: inline-block;
+  z-index: 9999999999999;
+}
+
+.close-alert {
+  float: right;
+}

@@ -1,0 +1,87 @@
+// Datepicker
+.date-range{
+    float: left;
+    font-size: $font-s;
+    @extend .flex-center-start;
+    // padding-left: $two-s;
+    // border-left: 1px solid $grey5;
+    // margin-left: $one-s;
+    span{
+        float: left;
+        color: $grey2;
+    }
+    @media (max-width: 768px){
+        margin-left: 0px;
+        border-left: 0px;
+        padding-left: 0px;
+        width: 100%;
+    }
+    .react-datepicker-wrapper{
+        float: left;
+        max-width: 100%;
+        margin-left: $one-s;
+        input{
+            border: 1px solid $grey5;
+            @include border-radius(4px);
+            @include box-shadow(none);
+            padding: $one-s  $one-half-s;
+            width: 100%;
+        }
+    }
+    .react-datepicker{
+        font-family: $font-default;
+        border: 1px solid $grey5;
+        background: $white;
+        @include border-radius($one-s);
+        padding: $one-s $two-s;
+        @include box-shadow($box-shadow-dropdown);
+        .react-datepicker__header{
+            background: $white;
+            border-bottom: 1px solid $border;
+        }
+        .react-datepicker__day:hover{
+            background: $bluetint;
+        }
+        .react-datepicker__header__dropdown{
+            @extend .flex-center-center;
+        }
+        .react-datepicker__day--selected, .react-datepicker__day--keyboard-selected{
+            background: $bluetint;
+            border: 1px solid $primaryblue;
+            color: $grey1;
+        }
+        .react-datepicker__month-select, .react-datepicker__year-select{
+            border-color: $border;
+            padding: $half-s;
+            @include border-radius($half-s);
+        }
+        .react-datepicker__month-dropdown-container, .react-datepicker__year-dropdown-container{
+            margin: $one-s;
+        }
+        .react-datepicker__current-month{
+            font-weight: $font-regular;
+            color: $grey1;
+            font-size: $font-s;
+        }
+    }
+    .react-datepicker__close-icon::after{
+        background-color: $primaryblue;
+    }
+}
+
+.react-datepicker__close-icon, .react-datepicker__close-icon::after{
+    display: none;
+    visibility: hidden;
+}
+
+.react-datepicker-popper{
+    position: absolute;
+}
+
+.form-group .control-label.material{
+    position: unset;
+}
+
+// .ml-one-s{
+//     margin-left: 0.2rem;
+// }

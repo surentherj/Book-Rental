@@ -1,0 +1,261 @@
+// Mixins
+.wd-100{
+	width: 100%;
+	float: left;
+}
+
+@mixin box-shadow($value) {
+	box-shadow: $value;
+	-webkit-box-shadow: $value;
+	-moz-box-shadow: $value;
+}
+
+@mixin text-shadow($value) {
+	text-shadow: $value;
+	-webkit-text-shadow: $value;
+	-moz-text-shadow: $value;
+}
+
+@mixin border-radius($value) {
+	border-radius: $value;
+	-webkit-border-radius: $value;
+	-moz-border-radius: $value;
+}
+
+@mixin transition($value) {
+	transition: $value;
+	-webkit-transition: $value;
+	-moz-transition: $value;
+}
+
+@mixin background-size($value) {
+	-webkit-background-size: $value;
+	-moz-background-size: $value;
+	-o-background-size: $value;
+	background-size: $value;
+}
+
+@mixin box-sizing($value) {
+	box-sizing: $value;
+    -moz-box-sizing: $value;
+    -webkit-box-sizing: $value;
+}
+
+@mixin transform($value) {
+	transform: translate($value);
+	-webkit-transform: translate($value);
+	-moz-transform: translate($value);
+}
+
+@mixin absolute-center(){
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+}
+
+@keyframes rotation {
+	0% { transform: rotate(0); }
+	10% { transform: rotate(30deg); }
+	20% { transform: rotate(0); }
+	80% { transform: rotate(0); }
+	90% { transform: rotate(-30deg); }
+	100% { transform: rotate(0); }
+}
+
+@keyframes zoom {
+	0% { opacity: 0; transform: scale(0); }
+	10% { opacity: 1; transform: scale(1); }
+	50% { opacity: 1; }
+	51% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+//Avatars
+@mixin avatar($size) {
+	width: $size;
+	height: $size;
+	min-width: $size;
+	min-height: $size;
+	line-height: $size;
+	position: relative;
+	@extend .flex-center;
+	cursor: pointer;
+	@if $size == $r-avatar-xl {
+		svg{
+			width: calc(#{$size} - 1.5rem);
+		}	
+	} 
+	@if $size == $r-avatar-xs {
+		svg{
+			width: calc(#{$size} - 0.75rem);
+		}	
+	} 
+	@else{
+		svg{
+			width: calc(#{$size} - 1rem);
+		}
+	}
+}
+
+//Icon
+@mixin icon($size) {
+	width: $size;
+	height: $size;
+	min-width: $size;
+	min-height: $size;
+	@extend .flex-center;
+	cursor: pointer;
+	@if $size == $icon-xs {
+		svg{
+			width: auto;
+			max-width: calc(#{$size} - 0.25rem);
+			height: auto;
+		}	
+	} 
+	@else if $size == $icon-s {
+		svg{
+			width: auto;
+			max-width: calc(#{$size} - 0.75rem);
+			height: auto;
+		}	
+	}
+	@else{
+		svg{
+			width: auto;
+			height: auto;
+			max-width: calc(#{$size} - 1rem);
+		}
+	}
+}
+
+@mixin nowrapicon($size) {
+	width: auto;
+	height: auto;
+	min-width: auto;
+	min-height: auto;
+	@extend .flex-center;
+	cursor: pointer;
+	@if $size == $icon-xs {
+		svg{
+			width: auto;
+			max-width: calc(#{$size} - 0.25rem);
+			height: auto;
+		}	
+	} 
+	@else if $size == $icon-s {
+		svg{
+			width: auto;
+			max-width: calc(#{$size} - 0.75rem);
+			height: auto;
+		}	
+	}
+	@else if $size == $icon-l {
+		svg{
+			width: calc(#{$size} - 1.3125rem);
+			height: auto;
+		}	
+	}
+	@else if $size == $icon-xl {
+		svg{
+			width: calc(#{$size} - 1rem);
+			height: auto;
+		}	
+	}
+	@else{
+		svg{
+			width: auto;
+			height: auto;
+			max-width: calc(#{$size} - 1rem);
+		}
+	}
+}
+
+// Scrollbar
+@mixin scrollbar() {
+	scrollbar-width: thin;
+	scrollbar-color: $grey5;
+	&::-webkit-scrollbar{
+		width: 4px;
+		height: 4px;
+	}
+	&::-webkit-scrollbar-track{
+		background: transparent;
+		@include border-radius(2px);
+	}
+	&::-webkit-scrollbar-thumb{
+		background: $grey5;
+		@include border-radius(2px);
+	}
+}
+
+// Wordwrap
+@mixin wordwrap($size){
+	max-width: $size;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+// Linecrop
+@mixin wordlinewrap($value) {
+	display: -webkit-box;
+	display: -moz-box;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	-webkit-line-clamp: $value;
+	-moz-line-clamp: $value;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+// FLex
+@mixin flex-center(){
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// Theme mixin
+@mixin themify($themes: $themes) {
+	@each $theme, $map in $themes {
+
+		.theme-#{$theme} & {
+		$theme-map: () !global;
+		@each $key, $submap in $map {
+			$value: map-get(map-get($themes, $theme), '#{$key}');
+			$theme-map: map-merge($theme-map, ($key: $value)) !global;
+		}
+
+		@content;
+		$theme-map: null !global;
+		}
+
+	}
+}
+
+// Get theme
+@function themed($key) {
+	@return map-get($theme-map, $key);
+} 
+
+  
+@mixin scrollbar-both() {
+	scrollbar-width: thin;
+	scrollbar-color: $grey5;
+	&::-webkit-scrollbar{
+		// width: 4px;
+		height: 4px;
+	}
+	&::-webkit-scrollbar-track{
+		background: $grey7;
+		@include border-radius(2px);
+	}
+	&::-webkit-scrollbar-thumb{
+		background: $grey5;
+		@include border-radius(2px);
+	}
+}

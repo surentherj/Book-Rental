@@ -1,0 +1,47 @@
+// Body elements includes all html elements
+body{
+    background-color: $rxd-information-25 !important;
+    font-family: $font-default !important;
+    padding-top: 59px;
+    padding-left: 58px;
+    // padding-right: 58px;
+    line-height: normal !important;
+    font-size: $font-r;
+    height: 100%;
+    @include scrollbar();
+    @media(max-width: 767px){
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    &.faq-body{
+        padding-left: 0;
+        padding-top: 50px;
+    }
+    &.login-page{
+        padding-top: 0;
+        padding-left: 0;
+    }
+}
+
+h1, h2, h3, h4, h5, h6{
+    // font-weight: $font-bold;
+    color: $grey1;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+a:hover{
+    text-decoration: none !important;
+}
+
+.subtitle3-m{
+    font-size: $font-s;
+    font-weight: $font-medium;
+}
+
+.subtitle3-b{
+    font-size: $font-s;
+    font-weight: $font-bold;
+}

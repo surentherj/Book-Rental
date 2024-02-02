@@ -1,0 +1,111 @@
+.status-tag{
+    font-size: $font-xs;
+    padding: 2px 8px;
+    line-height: normal;
+    // @extend .inline-flex-center-center;
+    @include border-radius(100px);
+    position: relative;
+    background: $grey6;
+    display: inline-flex;
+    align-items: center;
+    &:before{
+        min-width: 0.9rem;
+        min-height: 0.9rem;
+        display: inline-block;
+        content: '';
+        @include border-radius(50%);
+        margin-right: 8px;
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+    }
+    &.no-psudo{
+        &::before{
+            display: none;
+        }
+    }
+    &.bordered{
+        background-color: transparent;
+        border: 1px solid $border;
+        &.todo{
+            background: transparent;
+            border-color: $primaryblue;
+        }
+        &.inprogress{
+            background: transparent;
+            border-color: $alertred;
+        }
+        &.inreview{
+            background: transparent;
+            border-color: $alertyellow;
+        }
+        &.done{
+            background: transparent;
+            border-color: $successalert;
+        }
+    }
+    span{
+        float: left;
+    }
+    @media (max-width: 768px){
+        width: auto;
+        max-width: 100% !important;
+        margin-left: 0px;
+    }
+    &.todo{
+        // background: lighten($primaryblue, 50%);
+        background: $bluetint;
+        color: $primaryblue;
+        &:before{
+            background: $primaryblue;
+        }
+    }
+    &.opened{
+        // background: lighten($alertred, 25%);
+        background: $lightred;
+        color: $darkred;
+        &:before{
+            background: $alertred;
+        }
+    }
+    &.inreview, &.inprogress{
+        // background: lighten($alertyellow, 40%);
+        background: $lightyellow;
+        color: $darkyellow;
+        &:before{
+            background: $alertyellow;
+        }
+    }
+    &.done, &.closed{
+        // background: lighten($successalert, 30%);
+        background: $lightgreen;
+        color: $darkgreen;
+        &:before{
+            background: $successalert;
+        }
+    }
+}
+
+.status{
+    font-size: $font-s;
+    font-weight: $font-medium !important;
+    &.todo{
+        color: $primaryblue;
+    }
+    &.inprogress{
+        color: $dangeralert;
+    }
+    &.inreview{
+        color: $warningalert;
+    }
+    &.done{
+        color: $successalert;
+    }
+}
+
+.status-circle{
+    width: 5px;
+    height: 5px;
+    @include border-radius(50%);
+}

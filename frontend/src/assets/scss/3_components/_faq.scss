@@ -1,0 +1,159 @@
+.faq-wrapper{
+    @extend .wd-100;
+    background: $grey8;
+}
+
+.faq-header{
+    @extend .wd-100;
+    padding: 32px 0 24px 0;
+    background: $darkblue;
+
+    .faq-form{
+        @extend .wd-100;
+        justify-content: center;
+    }
+
+    .faq-title{
+        color: $white;
+    }
+}
+
+.faq-list-item{
+    @extend .wd-100;
+    background: $white;
+    padding: $two-s;
+    margin-bottom: $two-s;
+    .question{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: $font-m;
+        cursor: pointer;
+        color: $grey1;
+        &.open{
+            color: $primaryblue;
+        }
+        span{
+            padding-right: $one-s;
+        }
+    }
+    .answer{
+        border-top: 1px solid $border;
+        font-size: $font-m;
+        padding: $two-s 0;
+        margin-top: $two-s;
+        color: $grey2;
+        white-space: pre-line;
+    }
+}
+
+// Custom Modal
+.faq-modal-wrapper{
+    width: auto;
+    max-width: 300px;
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    z-index: 99999;
+    display: none;
+    animation: show 2s;
+    @keyframes show {
+        from{
+            -webkit-transform: translate3d(125%, 0, 0);
+	        transform: translate3d(125%, 0, 0);
+        }
+        to{
+            -webkit-transform: translate3d(0%, 0, 0);
+	        transform: translate3d(0%, 0, 0);
+        }
+    }
+    &.show{
+        @extend .flex-center-center;
+    }
+}
+
+// Modal overlay
+.faq-modal-overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10000;
+}
+
+// Modal container
+.faq-modal-container{
+    width: auto;
+    z-index: 10001;
+    @include border-radius($half-s);
+    background: $white;
+    @include box-shadow($box-shadow-default);
+    justify-content: center;
+    padding-top: 15px;
+    &.modal-sm{
+        width: 20vw;
+    }
+    &.modal-xs{
+        width: auto;
+        max-width: 160px;
+    }
+}
+
+// modal body
+.faq-modal-body{
+    @extend .wd-100;
+    background: $white;
+    padding: $two-s;
+    @include border-radius($half-s $half-s 0 0);
+    p{
+        font-size: $font-s;
+        color: $grey3;
+        margin: 0px;
+    }
+}
+
+// modal footer
+.faq-modal-option{
+    @extend .wd-100;
+    padding: 0 $two-s $two-s;
+    svg{
+        padding-right: $half-s;
+    }
+}
+
+// Mobile ticket icon
+
+.mob-ticket-icon{
+    // display: none;
+    // @media (max-width: 768px){
+        display: inline-block;
+        position: fixed;
+        bottom: 12px;
+        right: 12px;
+        z-index: 999;
+        .icon-wrap{
+            @include box-shadow($box-shadow-button);
+            background: $primaryblue;
+        }
+    // }
+}
+
+.faq-modal-wrapper{
+    // @media (max-width: 768px){
+    &.in-active{
+        display: none;
+    }
+    &.active{
+        display: flex;
+    }
+    // }
+}
+
+.close-faq{
+    position: absolute;
+    top: 0px;
+    right: 0;
+    z-index: 999909;
+    svg{
+        fill: $black;
+    }
+}

@@ -1,0 +1,68 @@
+// Breadcrumbs scss
+
+.breadcrumb{
+  width: 100%;
+  float: left;
+  background-color: transparent !important;
+  padding: 0;
+  ul{
+      @extend .flex-center;
+      @extend .wd-100;
+      list-style-type: none;
+  }
+  li{
+      @extend .flex-center;
+      font-size: $font-s;
+      padding-left: $one-three-s;
+      margin-left: $one-s;
+      float: left;
+      color: $grey2;
+      position: relative;
+      span{
+          height: 19px;
+      }
+      &:before{
+          display: inline-block;
+          content: "/";
+          width: 6px;
+          height: 19px;
+          color:$grey1;
+          position: absolute;
+          left: 0px;
+          top: 50%;
+          transform: translateY(-50%); 
+      }
+      a{
+          @extend .flex-center;
+          color: $grey2;
+          @media (max-width: 767px) {
+              display: inline-block;
+              @include wordwrap(200px);
+          }
+          &:hover{
+              color: $primaryblue;
+              cursor: pointer;
+          }
+          .icon-wrap + span{
+              margin: 0 $half-s;
+          }
+      }
+      &:first-of-type{
+          padding-left: 0px;
+          margin-left: 0;
+          &::before{
+              display: none;
+          }
+      }
+      &:last-of-type{
+          color: $primaryblue;
+          a{
+              color:  $primaryblue;
+              cursor: default;
+              pointer-events: none;
+              margin-right: 0;
+              font-weight: $font-medium;
+          }
+      }
+  }
+}

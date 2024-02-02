@@ -1,0 +1,384 @@
+// Query builder
+.queryBuilder {
+  @extend .wd-100;
+  // background: $white;
+  // border: 1px solid $border;
+  @include border-radius($half-s);
+  // height: calc(100% - 62px);
+  // overflow: hidden auto;
+  // @include scrollbar();
+  // padding: $two-s;
+  margin-top: $two-s;
+  .ruleGroup {
+    @extend .wd-100;
+    // border: 1px solid $border;
+    background: $white;
+    margin-left: 0 !important;
+    @include border-radius($half-s);
+    &-header {
+      @extend .wd-100;
+    }
+    .ruleGroup {
+      padding: $two-s;
+      margin-top: $one-s;
+      border: 1px solid $border;
+    }
+  }
+  // .betweenRules {
+  //   display: block;
+  // }
+  .ruleGroup-combinators,
+  .rule-fields,
+  .rule-operators,
+  .rule-value {
+    width: auto;
+    font-size: $font-s;
+    border: 1px solid $border;
+    background: $white;
+    cursor: pointer;
+    @include border-radius($half-s);
+    padding: $one-s;
+    margin-right: $one-s;
+  }
+  .ruleGroup-combinators {
+    max-height: 28px;
+    padding: 3px;
+    margin-right: 0;
+  }
+  .rule-operators {
+    max-height: 25px;
+    padding: 5px;
+    margin-right: 0;
+  }
+  .value-editor-select {
+    flex: 6;
+    color: black;
+  }
+
+  .field-selector {
+    flex: 3;
+    font-size: $font-s;
+    color: black;
+    margin-right: $one-s;
+  }
+  .ruleGroup-addRule,
+  .ruleGroup-addGroup {
+    width: auto;
+    @include border-radius($half-s);
+    cursor: pointer;
+    display: inline-flex;
+    border: transparent;
+    align-items: center;
+    justify-content: center;
+    line-height: normal;
+    padding: $half-s $one-s;
+    font-size: $font-xs;
+    background: $white;
+    color: $primary !important;
+    margin-left: $two-s;
+    border: 1px solid $primary;
+    &:hover {
+      // background: $darkblue;
+      border-color: $darkblue;
+      color: $darkblue;
+      // @include box-shadow($box-shadow-button);
+    }
+  }
+  .ruleGroup-addGroup,
+  .ruleGroup-addRule {
+    max-height: 28px;
+    padding: 5px;
+  }
+  .ruleGroup-body {
+    @extend .wd-100;
+    background: $white;
+  }
+  .rule {
+    @extend .wd-100;
+    background: $white;
+    padding: $one-s 0;
+    display: flex;
+    align-items: center;
+    margin-top: $one-s;
+    .date-range {
+      min-width: max-content;
+      .react-datepicker-wrapper {
+        max-width: max-content;
+      }
+    }
+  }
+  .rule-remove,
+  .ruleGroup-remove {
+    // @extend .ruleGroup-addGroup;
+    margin-left: 20px;
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    // background: #f1e5ff;
+    color: white;
+    @include border-radius($half-s);
+    border: 0;
+    // float: right;
+    cursor: pointer;
+  }
+}
+
+.queryBuilder-dragHandle {
+  display: none;
+}
+
+.querybuilder-left {
+  width: 54px;
+  padding: 0 $two-s;
+  background: $white;
+  float: left;
+  border-right: 1px solid $border;
+}
+
+.querybuilder-right {
+  width: calc(100% - 59px);
+  float: left;
+  padding: 0 $two-s;
+}
+
+// Query list
+.query-list {
+  @extend .wd-100;
+  padding: $one-s $two-s;
+  color: $grey1;
+  // border-bottom: 1px solid $border;
+  // margin-bottom: $one-s;
+  &.closed {
+    border-left: 3px solid #1bc54e;
+  }
+  &.opened {
+    border-left: 3px solid #cf1322;
+  }
+  &.inProgress {
+    border-left: 3px solid #ffa800;
+  }
+
+  &:hover,
+  &.active {
+    background: $bluetint;
+    cursor: pointer;
+  }
+  &.active {
+    font-weight: $font-bold;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.settings-list {
+  @extend .wd-100;
+  padding: $one-half-s;
+
+  // margin-bottom: $one-s;
+  &:hover,
+  &.active {
+    background: $bluetint;
+    cursor: pointer;
+  }
+}
+
+.queries-container-wrapper {
+  @extend .wd-100;
+  height: calc(100vh - 68px - 58px - 32px - 40px - 56px - 40px - 50px);
+  overflow: hidden auto;
+  @include scrollbar();
+  &.tickets-home-wrapper {
+    height: calc(100vh - 69px - 32px - 66px - 29px);
+  }
+}
+
+.query-builder-container-wrapper {
+  @extend .wd-100;
+  height: calc(100vh - 68px - 32px - 26px - 24px - 32px - 48px);
+  overflow: hidden auto;
+  @include scrollbar();
+}
+
+.menulist-container-wrapper {
+  @extend .wd-100;
+  background: $white;
+  overflow: hidden auto;
+  height: 100%;
+  @include scrollbar();
+}
+
+.condition-selector-wrapper {
+  @extend .wd-100;
+  // height: 100%;
+  // @include scrollbar();
+}
+
+.value-container-wrapper {
+  @extend .wd-100;
+  max-height: calc(
+    100vh - 68px - 32px - 58px - 32px - 26px - 16px - 56px - 40px - 28px - 16px
+  );
+  // @media (max-width: 1400px) {
+  //   height: calc(
+  //     70vh - 68px - 32px - 26px - 24px - 32px - 48px - 33px - 33px - 28px - 16px
+  //   );
+  // }
+  overflow: hidden auto;
+  @include scrollbar();
+}
+.split {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 68px - 60px - 44px);
+}
+
+.gutter {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+  cursor: col-resize;
+}
+
+.gutter.gutter-vertical {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
+  cursor: row-resize;
+}
+
+// Query builder
+.querybuilder-wrapper {
+  width: 100%;
+  float: left;
+  background: $white;
+  border: 1px solid $border;
+  padding: 0;
+}
+
+.query-left {
+  width: 100%;
+  float: left;
+  padding: $two-s 0;
+}
+
+.query-list-wrapper {
+  width: 100%;
+  float: left;
+}
+
+.query-list-head {
+  width: 100%;
+  float: left;
+  background: $white;
+  padding: $one-s $two-s;
+  border-bottom: 1px solid $border;
+}
+
+.query-list-body {
+  @extend .wd-100;
+  padding: $two-s 0;
+  height: calc(100vh - 68px - 58px - 54px);
+  overflow: hidden auto;
+  @include scrollbar();
+}
+
+.query-detail-wrapper {
+  @extend .wd-100;
+  .query-detail-head {
+    @extend .wd-100;
+    padding: $one-s $two-s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $border;
+  }
+}
+
+.query-builder-footer {
+  @extend .wd-100;
+  padding: $three-s 0 $one-s 0;
+  // border-top: 1px solid $border;
+}
+
+.queryBuilder-branches {
+  .ruleGroup-body {
+    margin-left: calc(2 * #{$rqb-branch-indent});
+  }
+
+  .rule,
+  .ruleGroup .ruleGroup {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      width: $rqb-branch-indent;
+      left: calc(-#{$rqb-branch-indent} - #{$rqb-branch-width});
+      border-color: $rqb-branch-color;
+      border-style: $rqb-branch-style;
+      border-radius: 0;
+      position: absolute;
+    }
+
+    &::before {
+      top: -$rqb-spacing;
+      height: calc(50% + #{$rqb-spacing});
+      border-width: 0 0 $rqb-branch-width $rqb-branch-width;
+    }
+
+    &:last-child::before {
+      border-bottom-left-radius: $rqb-branch-radius;
+    }
+
+    &::after {
+      top: 50%;
+      height: 50%;
+      border-width: 0 0 0 $rqb-branch-width;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  .ruleGroup .ruleGroup {
+    &::before,
+    &::after {
+      left: calc(
+        calc(-#{$rqb-branch-indent} - #{$rqb-branch-width}) - #{$rqb-border-width}
+      );
+    }
+
+    &::before {
+      top: calc(-#{$rqb-spacing} - #{$rqb-border-width});
+      height: calc(50% + #{$rqb-spacing} + #{$rqb-border-width});
+    }
+
+    &::after {
+      height: calc(50% + #{$rqb-border-width});
+    }
+  }
+
+  .betweenRules {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: $rqb-branch-indent;
+      left: calc(-#{$rqb-branch-indent} - #{$rqb-branch-width});
+      border-color: $rqb-branch-color;
+      border-style: $rqb-branch-style;
+      border-radius: 0;
+      position: absolute;
+      top: -$rqb-spacing;
+      height: calc(100% + #{$rqb-spacing});
+      border-width: 0 0 0 $rqb-branch-width;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.dc-chart {
+  @extend .wd-100;
+  // padding: $one-s;
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.axis .domain {
+  stroke: $grey3 !important;
+}
+
+.tick {
+  line {
+    stroke: $grey3 !important;
+  }
+  text {
+    font-family: $font-default;
+    fill: $grey3 !important;
+  }
+}
+
+.dc-legend-item {
+  text {
+    fill: $grey2 !important;
+  }
+}
+
+.dot {
+  r: 6px;
+  fill: white;
+  stroke-width: 2;
+  // stroke: $primarygreen;
+  stroke-opacity: 1 !important;
+}
+
+.doughnut-chart {
+  width: 50% !important;
+  margin: 0 auto;
+}
+
+.react-charts-card {
+  @extend .wd-100;
+
+  @extend .flex-center-center;
+  &.pie-chart {
+    canvas {
+      min-height: 320px;
+      max-height: 320px;
+    }
+  }
+}

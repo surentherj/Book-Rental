@@ -1,0 +1,139 @@
+//Switch
+
+$switch-default-width: 36px;
+$switch-default-height: 19px;
+$switch-default-thumb: 13px;
+
+$switch-small-width: 28px;
+$switch-small-height: 14px;
+$switch-small-thumb: 10px;
+
+$switch-default-round-thumb: 21px;
+$switch-small-round-thumb: 14px;
+
+.switch {
+    position: relative;
+    display: inline-block;
+    .switch_slider{
+        position: relative;
+        background: $grey5;
+        @include border-radius($two-s);
+        display: inline-block;
+        cursor: pointer;
+        &:after{
+            width: $switch-default-thumb;
+            height: $switch-default-thumb;
+            position: absolute;
+            content: "";
+            left: calc((#{$switch-default-height} - #{$switch-default-thumb}) / 2);
+            top: calc((#{$switch-default-height} - #{$switch-default-thumb}) / 2);
+            background-color: $white;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            @include border-radius($two-s);
+            display: inline-block;
+        }
+        &.rounded_sliders{
+            &:after{
+                width: $switch-default-round-thumb;
+                height: $switch-default-thumb;
+                left: calc((#{$switch-default-height} - #{$switch-default-thumb}) / 2);
+                top: calc((#{$switch-default-height} - #{$switch-default-thumb}) / 2);
+            }
+        }
+        &.small {
+            &:after{
+                width: $switch-small-thumb;
+                height: $switch-small-thumb;
+                left: calc((#{$switch-small-height} - #{$switch-small-thumb}) / 2);
+                top: calc((#{$switch-small-height} - #{$switch-small-thumb}) / 2);
+            }
+        }
+        &.small_rounded {
+            &::after{
+                width: $switch-small-round-thumb;
+                height: $switch-small-thumb;
+                left: calc((#{$switch-small-height} - #{$switch-small-thumb}) / 2);
+                top: calc((#{$switch-small-height} - #{$switch-small-thumb}) / 2);
+            }
+        }
+    }
+    &.default {
+        .switch_slider{
+            width: $switch-default-width;
+            height: $switch-default-height;
+        }
+    }
+    &.small {
+        .switch_slider{
+            width: $switch-small-width;
+            height: $switch-small-height;
+        }
+    }
+
+    /* Toggle text */
+    .text{
+        color: $white;
+        position: absolute;
+        right: calc((#{$switch-default-height} - #{$switch-default-thumb}) / 2);
+        &:before{
+            content: "0";
+            display: inline-block;
+        }
+        &.large {
+            font-size: $font-s;
+        }
+        &.small {
+            font-size: $font-xxs;
+        }
+    }
+
+    /* Hide default HTML checkbox */
+    input {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        &:checked{
+            & + .switch_slider{
+                background-color: $primaryblue;
+                &:after{
+                    -webkit-transform: translateX($two-s);
+                    -ms-transform: translateX($two-s);
+                    transform: translateX($two-s);
+                }
+                &.rounded_sliders,
+                &.small_sliders,
+                &.small_rounded {
+                    &::after{
+                        -webkit-transform: translateX($one-s);
+                        -ms-transform: translateX($one-s);
+                        transform: translateX($one-s);
+                    }
+                }
+                &.small {
+                    &::after{
+                        -webkit-transform: translateX($switch-default-thumb);
+                        -ms-transform: translateX($switch-default-thumb);
+                        transform: translateX($switch-default-thumb);
+                    }
+                }
+            }
+            & ~ .text{
+                right: auto;
+                left: calc((#{$switch-default-height} - #{$switch-default-thumb}) / 2);
+                &::before{
+                    content: "1";
+                }
+            }   
+        }
+        &:disabled{
+            cursor: default;
+            & + .switch_slider{
+                pointer-events: none;
+                opacity: 0.2;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,63 @@
+.tags-wrapper {
+  @extend .wd-100;
+  .tag {
+    @media (max-width: 767px) {
+      margin-bottom: $one-s;
+    }
+  }
+}
+
+.tag {
+  @extend .inline-flex-center;
+  @include border-radius($half-s);
+  padding: $half-s $one-s;
+  font-size: $font-xs;
+  border: 1px solid transparent;
+  &.success-tag {
+    background: lighten($successalert, 55%);
+    color: $successalert;
+  }
+  &.fail-tag {
+    background: lighten($dangeralert, 22%);
+    color: $dangeralert;
+  }
+  &.info-tag {
+    background: lighten($primaryblue, 45%);
+    color: $primaryblue;
+    margin-right: $one-s;
+  }
+  &.default-tag {
+    background: $culturedwhite1;
+    color: $grey1;
+  }
+  &.tag-border {
+    border-color: $grey3;
+    color: $grey3;
+    margin-right: $one-s;
+    &:hover {
+      color: $primary;
+      cursor: pointer;
+    }
+    &.active {
+      color: $primary;
+      border-color: $primary !important;
+      cursor: pointer;
+    }
+    &.warning-tag {
+      background: lighten($warningalert, 55%);
+      color: $warningalert;
+    }
+    &.info-tag {
+      background: lighten($primaryblue, 45%);
+      color: $primaryblue;
+    }
+    &.tag-border {
+      border-color: $grey3;
+      margin-right: $one-s;
+      &:hover {
+        color: $primary;
+        cursor: pointer;
+      }
+    }
+  }
+}

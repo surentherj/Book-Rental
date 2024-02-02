@@ -1,0 +1,109 @@
+// Custom Modal
+.modal-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  display: none;
+  animation: show 0.2s;
+  @keyframes show {
+    from {
+      -webkit-transform: translate3d(125%, 0, 0);
+      transform: translate3d(125%, 0, 0);
+    }
+    to {
+      -webkit-transform: translate3d(0%, 0, 0);
+      transform: translate3d(0%, 0, 0);
+    }
+  }
+  &.show {
+    @extend .flex-center-center;
+  }
+}
+
+// Modal overlay
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+// Modal container
+.modal-container {
+  width: auto;
+  z-index: 10001;
+  @include border-radius($half-s);
+  background: $white;
+  @include box-shadow($box-shadow-modal);
+  &.modal-xs {
+    width: auto;
+    max-width: 200px;
+  }
+  &.modal-sm {
+    width: 40vw;
+    max-width: 500px;
+  }
+  &.modal-md {
+    width: 50vw;
+    @media (max-width: 767px) {
+      width: 90%;
+    }
+  }
+  &.modal-lg {
+    width: 70vw;
+    @media (max-width: 767px) {
+      width: 90%;
+    }
+  }
+  &.modal-xl {
+    width: 90vw;
+    @media (max-width: 767px) {
+      width: 90%;
+    }
+  }
+}
+
+// Modal title
+.modal-title {
+  @extend .wd-100;
+  background: white;
+  @include border-radius($half-s $half-s 0 0);
+  @extend .flex-center-space-between;
+  padding: $one-s $two-s;
+  h4 {
+    margin: 0px;
+    color: black;
+    font-size: $font-s;
+  }
+}
+
+// modal body
+.modal-body {
+  @extend .wd-100;
+  background: $white;
+  padding: $two-s;
+  max-height: 500px;
+  overflow: hidden auto;
+  p {
+    font-size: $font-s;
+    color: $grey2;
+    margin: 0px;
+  }
+  &.minHeight {
+    min-height: 200px !important;
+  }
+}
+
+// modal footer
+.modal-option {
+  @extend .wd-100;
+  padding: 0 $two-s $two-s;
+}

@@ -1,0 +1,17 @@
+// Projects
+
+.project-container{
+    width: 100%;
+    float: left;
+    padding: $two-s $two-s 0 $two-s;
+    background: $white;
+    border-bottom: 1px solid $border;
+}
+
+.projects-scroll{
+    width: 100%;
+    float: left;
+    height: calc(100vh - 60px - 24px - 16px - 32px - 16px);
+    overflow: hidden auto;
+    @include scrollbar();
+}

@@ -1,0 +1,130 @@
+// Login
+
+.login-wrapper {
+  @extend .wd-100;
+  background: $white;
+  @media (max-width: 767px) {
+    height: 100vh;
+  }
+  // Login left
+  .login-left {
+    width: 70%;
+    float: left;
+    background: $lightblue;
+    height: 100vh;
+    position: relative;
+    @extend .flex-center-center;
+    @media (max-width: 767px) {
+      width: 100%;
+      height: 45vh;
+      flex-direction: column;
+    }
+    .login-logo {
+      @media (max-width: 767px) {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin-bottom: $three-s;
+      }
+    }
+  }
+
+  // Logo
+  .login-logo {
+    width: auto;
+    // position: absolute;
+    // left: $three-s;
+    // top: $three-s;
+    width: 100%;
+    //float: left;
+    //text-align: center;
+    img {
+      max-height: 48px;
+    }
+    a {
+      float: left;
+      margin-bottom: $three-s;
+      width: 100%;
+    }
+    svg {
+      position: relative;
+      right: auto;
+      width: auto;
+      max-width: 100%;
+      transform: none;
+      top: auto;
+    }
+    @media (max-width: 767px) {
+      left: $four-s;
+    }
+  }
+
+  // Login right
+  .login-right {
+    width: 30%;
+    float: left;
+    background: $white;
+    height: 100vh;
+    @extend .flex-center-center;
+    @media (max-width: 767px) {
+      width: 100%;
+      height: auto;
+    }
+    .login-right-footer {
+      position: absolute;
+      bottom: 0px;
+      left: 70%;
+      float: right;
+      padding: $three-s $eight-s;
+    }
+  }
+}
+
+// Login forms
+.forms {
+  min-width: 320px;
+  max-width: 335px;
+  @media (max-width: 767px) {
+    min-width: 100%;
+    max-width: 100%;
+    padding: $three-s $four-s;
+  }
+  label {
+    color: $grey3;
+  }
+  a {
+    font-size: $font-s;
+    color: $primaryblue;
+  }
+}
+
+// Forgot pass / OTP
+.login-center {
+  width: auto;
+  @extend .flex-center-center;
+  height: 100vh;
+}
+
+.link-text {
+  color: $grey2;
+  font-size: $font-s;
+}
+
+.link {
+  color: $primaryblue;
+  &:hover {
+    text-decoration: underline !important;
+  }
+  &.no-blue{
+    color: $rxd-gray3;
+  }
+}
+
+.icon-link {
+  color: $primaryblue;
+  @extend .inline-flex-center-center;
+  font-size: $font-s;
+  span {
+    margin-left: $one-s;
+  }
+}

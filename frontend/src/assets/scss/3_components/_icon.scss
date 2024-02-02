@@ -1,0 +1,179 @@
+.icon-xs {
+  width: 1rem;
+  height: 1rem;
+  svg,
+  img {
+    width: 0.5625rem;
+    height: 0.5625rem;
+  }
+}
+.icon-s {
+  width: 1.625rem;
+  height: 1.625rem;
+  svg,
+  img {
+    width: 12px;
+    height: 12px;
+  }
+}
+.icon-m {
+  width: 2.188rem;
+  height: 2.188rem;
+  svg,
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+.icon-l {
+  width: 2.5rem;
+  height: 2.5rem;
+  svg,
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+// Icons
+
+.icon-button {
+  @extend .inline-flex-center-center;
+  @include border-radius($half-s);
+  background: transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    background: $primaryblue;
+    @include box-shadow($box-shadow-button);
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
+  &.active {
+    background: $darkblue;
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
+}
+
+
+.edit-icon-button {
+  @extend .inline-flex-center-center;
+  @include border-radius($half-s);
+  background: transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    background: $grey4;
+    @include box-shadow($box-shadow-button);
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
+  &.active {
+    background: $grey4;
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.active1 {
+  background: $primaryblue;
+  @include box-shadow($box-shadow-button);
+  svg {
+    path {
+      fill: $white;
+    }
+  }
+}
+
+
+.icon-wrap {
+  @extend .inline-flex-center-center;
+  @include border-radius($half-s);
+  // background: transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+  &.no-cursor {
+    cursor: grab !important;
+  }
+  &.hover {
+    opacity: 1;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &.icon-active {
+    position: relative;
+    &:before {
+      position: absolute;
+      width: $one-s;
+      height: $one-s;
+      border: 1px solid $white;
+      @include border-radius(50%);
+      background: $primaryblue;
+      top: 1px;
+      right: 1px;
+      content: "";
+      display: inline-block;
+    }
+  }
+}
+
+.icon-nowrap {
+  @extend .inline-flex-center-center;
+  @include border-radius($half-s);
+  background: transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin-right: $two-s;
+  &.icon-active {
+    position: relative;
+    &:before {
+      position: absolute;
+      width: $one-s;
+      height: $one-s;
+      border: 1px solid $white;
+      @include border-radius(50%);
+      background: $primaryblue;
+      top: 1px;
+      right: 1px;
+      content: "";
+      display: inline-block;
+    }
+  }
+  &.icon-m {
+    width: 1.1875rem;
+    height: 1.1875rem;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.icon-group {
+  width: auto;
+  min-width: fit-content;
+  @extend .flex-center;
+}
+
+.transformIcon {
+  transform: rotate(180deg);
+}
+.transformIcon90 {
+    transform: rotate(90deg);
+}

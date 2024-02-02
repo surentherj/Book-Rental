@@ -1,0 +1,305 @@
+// cards
+// 14281 - 27012021
+
+.card {
+  width: 100%;
+  float: left;
+  // @include box-shadow($box-shadow-default);
+  // border: 1px solid $border;
+  background: $white;
+  padding: $two-s;
+  transition: all 0.2s;
+  position: relative;
+  &.rounded {
+    @include border-radius($half-s);
+  }
+  @media (max-width: 768px) {
+    margin-bottom: $two-s;
+  }
+  @media screen and (width: 1024px) {
+    padding: $one-s;
+  }
+  &.disable-padding {
+    padding: 0 0 !important;
+  }
+  &.shadowed {
+    @include box-shadow($rxd-shadow-yaxis-down-xs);
+  }
+  &.bordered {
+    @include box-shadow(none);
+    border: 1px solid $border;
+    // @include border-radius($half-s);
+  }
+  &.chart-card {
+    @include border-radius($half-s);
+    // border: 0;
+    &:hover {
+      @include box-shadow($box-shadow-default);
+    }
+    .card-head {
+      h3 {
+        width: auto;
+      }
+    }
+  }
+  &.space-small {
+    padding: $one-half-s $two-s !important;
+  }
+
+  .dashboard-card {
+    height: 240px;
+    overflow: hidden auto;
+    @include scrollbar();
+    padding-right: $half-s !important;
+  }
+
+  .card-head {
+    @extend .wd-100;
+    @extend .flex-center-space-between;
+    margin-bottom: $two-s;
+    h3 {
+      font-size: $font-s;
+      width: 90%;
+      // min-height: 45px;
+      margin-bottom: 2px;
+      @media screen and (width: 1024px) {
+        min-height: 30px;
+      }
+    }
+    .status {
+      font-size: $font-s;
+    }
+    .card-head-icon {
+      position: absolute;
+      top: $one-s;
+      right: $one-s;
+    }
+    .card-option {
+      width: auto;
+      float: right;
+    }
+    &.sticky-card-head {
+      position: sticky;
+      top: 0;
+      background: $rxd-information-25;
+      z-index: 8;
+      padding: $one-half-s 0;
+      margin: 0;
+    }
+  }
+  .card-body {
+    @extend .wd-100;
+    padding: 0px;
+    min-height: 35px;
+    h2,
+    h3 {
+      margin-bottom: 0px;
+    }
+    &.card-split {
+      @extend .flex-center-space-between;
+      position: relative;
+      &:before {
+        position: absolute;
+        width: 2px;
+        height: 30px;
+        content: "";
+        display: inline-block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $grey6;
+      }
+      p {
+        font-size: $font-xs;
+        width: 65%;
+        margin-bottom: 0px;
+        @media (min-width: 1200px) and (max-width: 1366px) {
+          width: 72%;
+        }
+        @media (min-width: 1600px) {
+          width: 50%;
+        }
+      }
+      .card-body-split {
+        width: 48%;
+        float: left;
+        min-height: 42px;
+        @include border-radius($half-s);
+        padding: $half-s $one-s;
+        @extend .flex-center-space-between;
+        &:hover,
+        &.active {
+          background: $culturedwhite;
+        }
+        @media screen and (width: 1024px) {
+          padding: $half-s;
+          min-height: 59px;
+        }
+      }
+      h3 {
+        font-size: $font-xl;
+      }
+    }
+    .chart-body {
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &:hover,
+  &.active {
+    @include box-shadow($box-shadow-default);
+  }
+  &.no-hover {
+    &.shadowed {
+      &:hover {
+        @include box-shadow($rxd-shadow-yaxis-down-xs);
+      }
+    }
+    &:hover {
+      @include box-shadow(none);
+    }
+  }
+}
+
+.card-wrapper {
+  @extend .wd-100;
+  background: $white;
+  padding: $two-s;
+  @include border-radius(4px);
+  border: 1px solid $border;
+}
+
+.header-card {
+  @extend .wd-100;
+  background: $white;
+  border: 1px solid $border;
+  padding: $two-s;
+  @include border-radius($half-s);
+}
+
+.h-scroll {
+  @include scrollbar-both();
+  padding-bottom: $one-s;
+  overflow-x: auto !important;
+}
+
+.kanban-card {
+  @include scrollbar();
+  padding: 0 $three-s 0 0 !important;
+  margin-right: $three-s;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 0 !important;
+  border-right: 1px solid $border !important;
+  background: transparent;
+  &:last-of-type {
+    border-right: 0 !important;
+  }
+  &:hover {
+    @include box-shadow(none);
+  }
+}
+
+.kanban-head {
+  width: 100%;
+  float: left;
+  padding: $one-s $two-s;
+  @include border-radius($half-s);
+  margin-bottom: $two-s;
+  background: $grey6;
+  &.opened {
+    // background: lighten($alertred, 25%);
+    background: $lightred;
+    color: $grey1;
+    &:before {
+      background: $alertred;
+    }
+  }
+  &.inprogress {
+    // background: lighten($alertyellow, 40%);
+    background: $mildyellow;
+    color: $grey1;
+    &:before {
+      background: $alertyellow;
+    }
+  }
+  &.closed {
+    // background: lighten($successalert, 30%);
+    background: $mildgreen;
+    color: $grey1;
+    &:before {
+      background: $successalert;
+    }
+  }
+}
+
+.kanban-main-content {
+  width: 100%;
+  float: left;
+  // max-height: calc(100vh - 59px - 40px - 50px - 43px - 20px);
+  // overflow: hidden auto;
+  // @include scrollbar();
+  padding: 0 $two-s;
+  .card {
+    padding: 0;
+    margin-right: 0;
+    border: 0;
+    border-right: 0 !important;
+    background: transparent;
+    @include box-shadow(none);
+  }
+  .kanban-board-head {
+    width: 100%;
+    padding: $one-half-s 0;
+    background: $rxd-information-25;
+    position: sticky;
+    top: 0;
+    z-index: 6;
+  }
+}
+
+.kanban-content {
+  width: 100%;
+  float: left;
+  max-height: calc(100vh - 60px - 103px - 50px - 60px - 50px - 12px);
+  overflow: hidden auto;
+  @include scrollbar();
+  padding-right: $half-s;
+}
+
+.dashboard-wrapper {
+  width: 100%;
+  float: left;
+  // height: calc(100vh - 60px - 103px - 56px - 40px);
+  // overflow: hidden auto;
+  // @include scrollbar();
+  // padding-right: $half-s;
+}
+
+.full-screen-mode {
+  position: fixed;
+  // pointer-events: none;
+  overflow: hidden auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999 !important;
+  @include scrollbar();
+  &.card {
+    background: $rxd-information-25;
+    padding: 0 $two-s;
+    .chart-card {
+      background: $white;
+    }
+  }
+  .sticky-full-screen-head {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    padding: $one-half-s 0;
+    background: $rxd-information-25;
+  }
+}

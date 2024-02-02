@@ -1,0 +1,51 @@
+.navbar {
+  width: 100%;
+  float: left;
+  padding: 16px 24px;
+  border-bottom: 1px solid $border;
+  background: $white;
+  padding-left: calc(58px + 24px);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 9;
+  @extend .flex-center-space-between;
+  @media (max-width: 767px) {
+    padding-left: $seven-s;
+  }
+}
+
+.navbar-brand{
+  float: left;
+  padding: 0px;
+  img, svg{
+      float: left;
+      width: 100px;
+      height: 24px;
+  }
+}
+
+.right-navbar{
+  display: flex;
+  align-items: center;
+  .form-control.size-s{
+    height: 26px;
+  }
+}
+
+// Top Nav
+.top-nav {
+  width: auto;
+  margin: 0px;
+  padding: 0px;
+  display: inline-flex;
+  align-items: center;
+  li {
+    width: auto;
+    float: left;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    margin-left: $two-s;
+  }
+}

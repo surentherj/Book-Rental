@@ -1,0 +1,38 @@
+// backlog
+.topbar-wrapper{
+    width: 100%;
+    float: left;
+    position: fixed;
+    top: 59px;
+    left: 0;
+    padding: 0 0 0 58px;
+    background: $white;
+    z-index: 12;
+}
+
+.backlog-wrapper {
+    width: 100%;
+    float: left;
+    // padding-right: $half-s;
+    margin-top: calc(154px);
+}
+
+.board-wrapper {
+    width: 100%;
+    float: left;
+    height: calc(100vh - 59px - 40px - 52px - 51px - 100px);
+    overflow: hidden auto;
+    @include scrollbar();
+    padding-right: $half-s;
+}
+
+.sprint-list-card{
+    padding: 0 $three-s !important;
+    border: 0;
+    @include box-shadow(none !important);
+    background: transparent;
+    
+    .card-body{
+        height: 100%;
+    }
+}

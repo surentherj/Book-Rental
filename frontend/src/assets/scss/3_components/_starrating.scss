@@ -1,0 +1,50 @@
+// Star Rating scss
+// 14141 - 09042021
+
+.star-rating{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    vertical-align: middle;
+    &.feedback{
+        margin: $one-s 0;
+    }
+    .star {
+        width: 2.5rem;
+        height: 2.5rem;
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            transition: transform .2s ease-out;
+        }
+        padding-right: 0.5em;
+        &:hover {
+            cursor: pointer;
+            svg{
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+
+.feedback-wrapper{
+    @extend .wd-100;
+    padding: 0 $four-s;
+    .star-rating{
+        margin: $one-s 0;
+        .star{
+            width: 1rem;
+            height: 1rem;
+            svg{
+                width: 1rem;
+                height: 1rem;
+            }
+            &:hover{
+                cursor: default;
+            }
+        }
+    }
+    .feedback-comment{
+        font-size: $font-s;
+    }
+}

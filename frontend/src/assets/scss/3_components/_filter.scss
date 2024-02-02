@@ -1,0 +1,58 @@
+.filter-wrapper{
+    @extend .wd-100;
+    display: none;
+    margin-top: $two-s;
+    padding-top: $two-s;
+    background: $white;
+    border-top: 1px solid $border;
+    position: relative;
+    transition: all 0.2s;
+    &.filter-enabled{
+        display: block;
+        transition: all 0.2s;
+    }
+    .filter-tags{
+        @extend .wd-100;
+        padding-right: $three-s;
+        .filter-tag{
+            padding: 2px $one-s;
+            background: $primaryblue;
+            color: $white;
+            font-size: $font-s;
+            @include border-radius($half-s);
+            position: relative;
+            @extend .flex-center-space-between;
+            float: left;
+            margin-right: $one-s;
+            &:last-of-type{
+                margin-right: 0;
+            }
+        }
+        .close-option{
+            width: 14px;
+            height: 14px;
+            padding: 2px;
+            @extend .inline-flex-center-center;
+            @include border-radius(50%);
+            border: 1px solid $white;
+            margin-left: $one-s;
+            cursor: pointer;
+            svg{
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+}
+
+.filter-toggle-collapse{
+    position: absolute;
+    bottom: -16px;
+    right: 8px;
+}
+
+.filter-toggle-expand{
+    position: absolute;
+    top: 16px;
+    right: -8px;
+}

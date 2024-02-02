@@ -1,0 +1,202 @@
+// sidebar
+.sidebar{
+    width: 250px;
+    position: fixed;
+    top: 0px;
+    background: $rxd-primary-800;
+    height: 100vh;
+    overflow: hidden;
+    // @include box-shadow($box-shadow-sidebar-left);
+    z-index: 9999;
+    padding: $one-s $two-s;
+    transition: all 0.2s;
+    &.pos-left{
+        left: 0px;        
+    }
+    &.collapsed{
+        width: 58px;
+        transition: all 0.2s;
+        padding: $one-s $one-s;
+        @media (max-width: 767px){
+            left: -60px;
+        }
+        ul{
+            li{
+                justify-content: center;
+                &:hover, &.active{
+                    background: transparent;
+                    .icon-wrap{
+                        background: $primaryblue;
+                    }
+                }
+                a{
+                    width: auto;
+                }
+                span{
+                    display: none;
+                    transition: all 0.1s;
+                }  
+                path{
+                    stroke: $white;
+                }             
+            }
+        }
+    }
+    ul{
+        width: 100%;
+        float: left;
+        margin: 0px;
+        padding: $one-s 0;
+        list-style: none;
+        border-bottom: 1px solid $border;
+        &:first-of-type{
+            padding-top: 0px;
+        }
+        &:last-of-type{
+            border-bottom: 0px;
+        }
+        li{
+            width: 100%;
+            float: left;
+            margin-bottom: $two-s;
+            @include border-radius(4px);
+            cursor: pointer;
+            padding: $one-s;
+            @extend .flex-center-start;
+            &.toggled{
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                &:hover{
+                    background: transparent;
+                    path{
+                        // fill: $primaryblue;
+                    }
+                }
+                svg{
+                    float: right;
+                }
+                span{
+                    margin-left: 0;
+                    svg{
+                        width: 100px;
+                    }
+                }
+                .logo-brand{
+                    path{
+                        fill: $white;
+                    }
+                }
+            }
+            a{
+                width: 100%;
+                color: $white;
+                @extend .flex-center-start;
+            }
+            path{
+                stroke: $white;
+            }
+            span{
+                min-width: 80px;
+                display: inline-flex;
+                margin-left: $half-s;
+                font-size: $font-s;
+                transition: all 0.1s;
+                color: $white;
+            }
+            &:hover, &.active{
+                background: $primaryblue;
+                color: $white;
+                a{
+                    color: $white;
+                }
+                .old-ticket{
+                    path{
+                        stroke: transparent;
+                    }
+                }
+                svg{
+                    path{
+                        // fill: $white;
+                        // stroke: $white;
+                    }
+                }
+            }
+            &:last-of-type{
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+// Mobile toggle
+.mb-toggle{
+    display: none;
+    top: 20px;
+    left: 20px;
+    position: fixed;
+    z-index: 99;
+    @media (max-width: 767px){
+        display: inline-flex;
+    }
+}
+
+.settings-left, .left-column {
+    @extend .wd-100;
+    height: calc(100vh - 67px - 32px);
+    overflow: hidden;
+    border: 1px solid $border;
+    @include border-radius($half-s);
+    // padding: $two-s;
+    background: $white;
+    &.no-bg{
+        background: transparent;
+        padding: 0;
+        border-right: 0;
+    }
+    .settings-head, .left-column-head{
+        width: 100%;
+        float: left;
+        padding: $two-s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .settings-body, .left-column-body{
+        width: 100%;
+        float: left;
+    }
+    ul {
+      list-style: none;
+      @extend .wd-100;
+      li {
+        @extend .wd-100;
+        // margin-bottom: $one-s;
+        // @include border-radius(4px);
+        cursor: pointer;
+        padding: $one-s $two-s;
+        font-size: $font-s;
+        @extend .flex-center-start;
+        align-items: center;
+        color: $grey1;
+        &:hover,
+        &.active {
+          background: $bluetint;
+          color: $grey1;
+          font-weight: $font-bold;
+          @include transition(all 0.2s);
+          a {
+            color: $primary;
+          }
+          svg {
+            path {
+              fill: $primary;
+            }
+          }
+        }
+        &:last-of-type {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,58 @@
+// Audio
+//  14281 27012021
+
+.audio-recorder-wrapper{
+    @extend .wd-100;
+    background: $culturedwhite;
+    @include border-radius(21px);
+    height: 42px;
+    position: relative;
+    @extend .flex-center-space-between;
+    .audio-text{
+        @extend .wd-100;
+        font-size: $font-s;
+        color: $grey2;
+        padding-left: $two-s;
+        .record-text{
+            @extend .inline-flex-center;
+            color: $dangeralert;
+            .blink-record{
+                width: $one-half-s;
+                height: $one-half-s;
+                display: inline-flex;
+                background: $dangeralert;
+                @include border-radius(50%);
+                margin-right: $one-s;
+                animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+                @keyframes blinker {  
+                    from{ 
+                        opacity: 1; 
+                    }
+                    to{
+                        opacity: 0.2;
+                    }
+                }
+            }
+        }
+
+    }
+    &.play-wrapper{
+        justify-content: flex-start !important;
+    }
+}
+
+.record-buttons{
+    min-width: 42px;
+    min-height: 42px;
+    @extend .inline-flex-center-center;
+    @include border-radius(50%);
+    background: $darkgrey;
+    cursor: s;
+    .white-svg{
+        svg{
+            path{
+                fill: $white;
+            }
+        }
+    }
+}

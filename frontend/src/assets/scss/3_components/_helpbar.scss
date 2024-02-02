@@ -1,0 +1,13 @@
+// helpbar
+.helpbar{
+    width: 58px;
+    height: calc(100vh - 67px);
+    background: transparent;
+    border-left: 1px solid $border;
+    position: fixed;
+    top: 67px;
+    right: 0px;
+    @media (max-width: 767px){
+        right: -60px;
+    }
+}

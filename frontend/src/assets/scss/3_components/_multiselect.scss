@@ -1,0 +1,65 @@
+.multiselect-wrapper {
+  @extend .wd-100;
+  border: 1px solid $border;
+  @include border-radius($half-s);
+  .multiselect-head {
+    @extend .wd-100;
+    padding: $one-s $two-s;
+    border-bottom: 1px solid $border;
+  }
+  .multiselect-search {
+    @extend .wd-100;
+    padding: $two-s;
+  }
+  .multiselect-body {
+    @extend .wd-100;
+    padding: $one-s $two-s;
+    max-height: 200px;
+    overflow: hidden auto;
+    @include scrollbar();
+    &.selected-li-wrap {
+      max-height: 260px;
+    }
+    .each-checkbox {
+      @extend .wd-100;
+      margin-bottom: $one-s;
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+    }
+    .each-li-card {
+      @extend .wd-100;
+      font-size: $font-s;
+      padding: $one-s $half-s;
+      border-bottom: 1px solid $border;
+      cursor: pointer;
+      &:last-of-type {
+        border-bottom: 0;
+      }
+      &:hover {
+        background: $bluetint;
+      }
+      span {
+        font-size: $font-xs;
+      }
+      &.selected-li {
+        display: flex;
+        align-items: center;
+        padding: $half-s 0;
+        justify-content: space-between;
+        &:hover {
+          background: transparent;
+        }
+        .icon-wrap {
+          float: right;
+          margin-left: $one-s;
+        }
+      }
+    }
+  }
+  .multiselect-footer {
+    @extend .wd-100;
+    padding: $one-s $two-s;
+    border-top: 1px solid $border;
+  }
+}

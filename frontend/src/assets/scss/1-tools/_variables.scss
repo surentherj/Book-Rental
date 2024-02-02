@@ -1,0 +1,382 @@
+// App Variable for rtrack
+
+// Colors
+$primaryblue: #0073e6;
+$light-primary: #e6f1fd;
+$lightblue: #effcff;
+$buttonblue: #023e7d;
+$darkblue: #0466c8;
+$alertred: #cf1322;
+$alertyellow: #f8a500;
+$primarygreen: #5bac70;
+$culturedwhite: #f7f9fb;
+$bgwhite: #f9fafb;
+$culturedwhite1: #f0f0f0;
+$culturedwhite3: #f7f9fb;
+$deepblue: #0353a4;
+$bluetint: #e1f0ff;
+$lightred: #fce9eb;
+$lightgrey3: #d4dbe2;
+$gred: #ed7887;
+$bgrey: #e1e6ea;
+$mildgreen: #e8f3eb;
+$lightgreen: #b9dcc2;
+$darkgreen: #0d521e;
+$lightyellow: #ffe8bd;
+$darkyellow: #5c080f;
+$darkred: #cf1322;
+$mildyellow: #fff7e9;
+
+// base colors
+$white: #ffffff;
+$black: #000000;
+
+// gray
+$grey1: #33415c; // heading
+$grey2: #5c677d; // heading
+$grey3: #7d8597; // paragraph
+$grey4: #979dac; // paragraph
+$grey5: #c9cdd6; // divider
+$grey6: #e9ebef; // card border
+$grey7: #f0f0f0; // background, cards
+$grey8: #f8f8f8; // background, textfields
+$grey9: #99a3ad;
+$darkgrey: #d8d8d8; // background, audio
+$greywhite: #edf0f2;
+$bluegrey: #33465c;
+$greyblue: #45546e;
+$black-text: #33415c;
+$oxfordblue40: #667485;
+
+// Theme colors
+$primary: $primaryblue;
+$successalert: $primarygreen;
+$infoalert: $primaryblue;
+$dangeralert: $alertred;
+$warningalert: $alertyellow;
+$graph-red: $gred;
+
+// Typography family
+$font-lato: "Lato", sans-serif;
+$font-inter: 'Inter', sans-serif;
+$font-default: $font-inter;
+
+// Typography size
+$font-xxs: 0.625rem; //10px
+$font-xs: 0.75rem; //12px
+$font-s: 0.813rem; //13px
+$font-m: 0.9rem; //14px
+$font-ms: 0.9375;
+$font-r: 1rem; //16px
+$font-l: 1.3rem; //20px
+$font-xl: 1.5rem; //24px
+$font-xxl: 2rem; //32px
+$font-xxxl: 2.5rem; //40px
+
+// Typography weight
+$font-thin: 100; //thin
+$font-light: 300; //light
+$font-regular: 400; //regular
+$font-medium: 500; //medium
+$font-semi-bold: 600; //semi bold
+$font-bold: 700; //bold
+$font-black: 900; //black
+
+// Borders
+$border: $grey6;
+$execution_border: $grey2;
+$border-dark: $grey3;
+$table-border: $greywhite;
+
+// Shadows
+$box-shadow-default: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+$tab-active-shadow: 0 0.938rem 0.5rem rgba(2, 62, 125, 0.2);
+$box-shadow-hover: 0 0.5rem 0.625rem rgba(2, 62, 125, 0.2);
+$box-shadow-sidedraw: -1.125rem 0 1.625rem rgba(2, 62, 125, 0.2);
+$box-shadow-sidebar-left: 0.5rem 0 0.625rem rgba(2, 62, 125, 0.2);
+$box-shadow-button: 0 0.5rem 0.625rem rgba(2, 62, 125, 0.2);
+$box-shadow-dropdown: 0 0.625rem 0.625rem rgba(2, 62, 125, 0.1);
+$box-shadow-modal: 0 0.625rem 0.625rem rgba(2, 62, 125, 0.1);
+$box-shadow-dropdownlist    : 0 0.875rem 0.625rem rgba(2, 62, 125, 0.1);
+
+// Default space value
+$quarter-s: 0.1875rem; //3px
+$half-s: 0.25rem; // 4px
+$one-s: 0.5rem; // 8px
+$one-half-s: 0.75rem; // 12px
+$one-three-s: 0.875rem; // 14px
+$two-s: 1rem; // 16px
+$two-half-s: 1.25rem; // 20px
+$three-s: 1.5rem; // 24px
+$four-s: 2rem; // 32px
+$five-s: 2.5rem; // 40px
+$six-s: 3rem; // 48px
+$seven-s: 3.5rem; // 56px
+$eight-s: 4rem; // 64px
+
+// Basic
+$rqb-spacing: 0.5rem !default;
+$rqb-background-color: rgba(0, 75, 183, 0.2) !default;
+$rqb-border-color: #8081a2 !default;
+$rqb-border-style: solid !default;
+$rqb-border-radius: 0.25rem !default;
+$rqb-border-width: 1px !default;
+
+// Drag-and-drop
+$rqb-dnd-hover-border-bottom-color: rebeccapurple !default;
+$rqb-dnd-hover-copy-border-bottom-color: #669933 !default;
+$rqb-dnd-hover-border-bottom-style: dashed !default;
+$rqb-dnd-hover-border-bottom-width: 2px !default;
+
+// Branches
+$rqb-branch-indent: $rqb-spacing !default;
+$rqb-branch-color: $rqb-border-color !default;
+$rqb-branch-width: $rqb-border-width !default;
+$rqb-branch-radius: $rqb-border-radius !default;
+$rqb-branch-style: $rqb-border-style !default;
+
+
+// RXD Theme
+// RXD Theme
+// Author - 14281
+
+// Rounded corners
+$rounded-half-s             : $half-s;
+$rounded-one-s              : $one-s;
+$rounded-circle             : 50%;
+
+// Shadow RXD
+$rxd-shadow-yaxis-down-xs   : 0px 1px 2px 0px rgba(24, 40, 88, 0.05);
+$rxd-input-shadow           : 0px 1px 2px 0px rgba(24, 40, 88, 0.05);
+$rxd-input-focus-shadow     : 0px 1px 2px 0px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #EAF4FF;
+$rxd-btn-primary-shadow     : 0px 1px 2px 0px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #EAF4FF;
+$rxd-btn-success-shadow     : 0px 1px 2px 0px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #ECFDF3;
+$rxd-shadow-yaxis-down-xs   : 0px 1px 2px 0px rgba(24, 40, 88, 0.06), 0px 1px 3px 0px rgba(24, 40, 88, 0.10);
+
+// RXD Primary
+$rxd-primary-900            : #003870;
+$rxd-primary-800            : #00488F;
+$rxd-primary-700            : #0058AF;
+$rxd-primary-600            : #0068CF;
+$rxd-primary-500            : #0073E6;
+$rxd-primary-400            : #3097FF;
+$rxd-primary-300            : #70B7FF;
+$rxd-primary-200            : #AFD7FF;
+$rxd-primary-100            : #CFE7FF;
+$rxd-primary-50             : #EAF4FF;
+$rxd-primary-25             : #F5FAFF;
+
+// RXD Success
+$rxd-success-900            : #054F31;
+$rxd-success-800            : #05603A;
+$rxd-success-700            : #027A48;
+$rxd-success-600            : #039855;
+$rxd-success-500            : #12B76A;
+$rxd-success-400            : #32D583;
+$rxd-success-300            : #6CE9A6;
+$rxd-success-200            : #A6F4C5;
+$rxd-success-100            : #D1FADF;
+$rxd-success-50             : #ECFDF3;
+$rxd-success-25             : #F6FEF9;
+
+// RXD Warning
+$rxd-warning-900            : #7A2E0E;
+$rxd-warning-800            : #93370D;
+$rxd-warning-700            : #B54708;
+$rxd-warning-600            : #DC6803;
+$rxd-warning-500            : #F79009;
+$rxd-warning-400            : #FDB022;
+$rxd-warning-300            : #FEC84B;
+$rxd-warning-200            : #FEDF89;
+$rxd-warning-100            : #FEF0C7;
+$rxd-warning-50             : #FFFAEB;
+$rxd-warning-25             : #FFFCF5;
+
+// RXD Error
+$rxd-error-900              : #7A271A;
+$rxd-error-800              : #912018;
+$rxd-error-700              : #B42318;
+$rxd-error-600              : #D92D20;
+$rxd-error-500              : #F04438;
+$rxd-error-400              : #F97066;
+$rxd-error-300              : #FDA29B;
+$rxd-error-200              : #FECDCA;
+$rxd-error-100              : #FEE4E2;
+$rxd-error-50               : #FEF3F2;
+$rxd-error-25               : #FFFBFA;
+
+// RXD Information
+$rxd-information-900        : #182858;
+$rxd-information-800        : #1E3371;
+$rxd-information-700        : #253E8A;
+$rxd-information-600        : #2C49A3;
+$rxd-information-500        : #4264CC;
+$rxd-information-400        : #5C79D3;
+$rxd-information-300        : #8EA2E1;
+$rxd-information-200        : #C0CCEE;
+$rxd-information-100        : #D9E0F5;
+$rxd-information-50         : #EBEFF9;
+$rxd-information-25         : #F8F9FC;
+
+// RXD Gray
+$rxd-gray-900               : #101828;
+$rxd-gray-800               : #1D2939;
+$rxd-gray-700               : #344054;
+$rxd-gray-600               : #475467;
+$rxd-gray-500               : #667085;
+$rxd-gray-400               : #98A2B3;
+$rxd-gray-300               : #D0D5DD;
+$rxd-gray-200               : #EAECF0;
+$rxd-gray-100               : #F2F4F7;
+$rxd-gray-50                : #F9FAFB;
+$rxd-gray-25                : #FCFCFD;
+
+// RXD BlueGray
+$rxd-bluegray-900           : #101323;
+$rxd-bluegray-800           : #293056;
+$rxd-bluegray-700           : #363F72;
+$rxd-bluegray-600           : #3E4784;
+$rxd-bluegray-500           : #4E5BA6;
+$rxd-bluegray-400           : #717BBC;
+$rxd-bluegray-300           : #AFB5D9;
+$rxd-bluegray-200           : #D5D9EB;
+$rxd-bluegray-100           : #EAECF5;
+$rxd-bluegray-50            : #F8F9FC;
+$rxd-bluegray-25            : #FCFCFD;
+
+// RXD Purple
+$rxd-purple-900             : #3E1C96;
+$rxd-purple-800             : #4A1FB8;
+$rxd-purple-700             : #5925DC;
+$rxd-purple-600             : #6938EF;
+$rxd-purple-500             : #7A5AF8;
+$rxd-purple-400             : #9B8AFB;
+$rxd-purple-300             : #BDB4FE;
+$rxd-purple-200             : #D9D6FE;
+$rxd-purple-100             : #EBE9FE;
+$rxd-purple-50              : #F4F3FF;
+$rxd-purple-25              : #FAFAFF;
+
+// Gray
+$rxd-gray1                  : $rxd-gray-900;
+$rxd-gray2                  : $rxd-gray-800;
+$rxd-gray3                  : $rxd-gray-700;
+$rxd-gray4                  : $rxd-gray-600;
+$rxd-gray5                  : $rxd-gray-500;
+$rxd-gray6                  : $rxd-gray-400;
+$rxd-gray7                  : $rxd-gray-300;
+$rxd-gray8                  : $rxd-gray-200;
+$rxd-gray9                  : $rxd-gray-100;
+$rxd-gray10                 : $rxd-gray-50;
+$rxd-gray11                 : $rxd-gray-25;
+
+// Accent Blue
+$rxd-accentblue-900         : #194185;
+$rxd-accentblue-800         : #293056;
+$rxd-accentblue-700         : #175CD3;
+$rxd-accentblue-600         : #1570EF;
+$rxd-accentblue-500         : #2E90FA;
+$rxd-accentblue-400         : #53B1FD;
+$rxd-accentblue-300         : #84CAFF;
+$rxd-accentblue-200         : #B2DDFF;
+$rxd-accentblue-100         : #D1E9FF;
+$rxd-accentblue-50          : #EFF8FF;
+$rxd-accentblue-25          : #F5FAFF;
+
+// Theme Colors
+$rxd-primary                : $rxd-primary-500;
+$rxd-success                : $rxd-success-500;
+$rxd-warning                : $rxd-warning-500;
+$rxd-error                  : $rxd-error-500;
+$rxd-info                   : $rxd-information-500;
+
+
+// background
+$rxd-background             : $rxd-information-25;
+
+// Theme variables
+$themes: (
+  rxd: (
+    whiteColor: $white,
+    textColor: $white,
+    borderColor: $rxd-gray8,
+    primaryColor: $rxd-primary,
+    primaryHoverColor: $rxd-primary-600,
+    primaryFocusColor: $rxd-primary-700,
+    primaryDisabledColor: $rxd-primary-200,
+    primaryDisbaledTextcolor: $white,
+    successDefaultColor: $rxd-success,
+    successHoverColor: $rxd-success-600,
+    successFocusColor: $rxd-primary-700,
+    successDisabledColor: $rxd-success-200,
+    errorHoverColor: $rxd-error-600,
+    errorFocusColor: $rxd-error-700,
+    errorDisabledColor: $rxd-error-200,
+    navGradient: $white,
+    tint: $rxd-primary-50,
+    primaryShade: none,
+    accentLight: $rxd-accentblue-100,
+    accentDark: $rxd-accentblue-700,
+    accentTint: $rxd-accentblue-25,
+    background: $rxd-background,
+    font: $font-inter,
+    inputLabel: $rxd-gray4,
+    inputBg: $white,
+    inputSuccessBg: $white,
+    inputErrorBg: $white,
+    inputBorder: $rxd-gray7,
+    inputShadow: $rxd-input-shadow,
+    inputFocusShadow: $rxd-input-focus-shadow,
+    inputCaptionMargin: 4px,
+    inputCaption: $rxd-gray5,
+    inputCaptionFontWeight: $font-regular,
+    inputDefaultColor: $rxd-gray6,
+    inputActiveColor: $rxd-gray2,
+    inputFilledColor: $rxd-gray2,
+    inputDisabledbg: $rxd-gray9,
+    inputLabelMargin: $half-s,
+    inputSmallSize: 26px,
+    inputSmallSpace: 0 $two-s,
+    inputSmallFont: $font-xs,
+    inputSmallLineHeight: $font-m,
+    inputMediumSize: 35px,
+    inputMediumSpace: 0 $one-s,
+    inputMediumFont: $font-s,
+    inputLargeSize: 40px,
+    inputLargeSpace: 0 $one-s,
+    inputLargeFont: $font-l,
+    successColor: $rxd-success,
+    errorColor: $rxd-error,
+    dangerColor: $rxd-error,
+    radioBtnDefaultBg: $rxd-gray10,
+    radioBtnHoverBg: $rxd-primary-600,
+    radioBtnSelectedBg: $rxd-primary-700,
+    radioBtnDefaultColor: $rxd-gray6,
+    radioBtnSelectedColor: $rxd-gray3,
+    radioBtnSolidDefaultColor: $rxd-gray6,
+    radioBtnSolidHoverColor: $white,
+    radioBtnSolidSelectedColor: $white,
+    radioBtnGhostDefaultColor: $rxd-gray-700,
+    radioBtnGhostHoverColor: $rxd-primary-600,
+    radioBtnGhostSelectedColor: $rxd-primary-700,
+    radioBtnGhostSelectedBg: $white,
+    checkboxDefaultColor: $rxd-gray3,
+    checkboxDefaultBorder: $rxd-gray5,
+    breadcrumbDefault: $rxd-gray5,
+    breadcrumbActive: $rxd-primary,
+    buttonXSmallSpace: $half-s $one-s,
+    buttonXSmallFont: $font-xs,
+    buttonXSmallHeight: 26px,
+    buttonSmallSpace: $half-s $one-half-s,
+    buttonSmallFont: $font-xs,
+    buttonSmallHeight: 26px,
+    buttonMediumSpace: $one-s $two-s,
+    buttonMediumFont: $font-s,
+    buttonMediumHeight: 35px,
+    buttonLargeSpace: $two-s,
+    buttonLargeFont: $font-l,
+    buttonLargeHeight: 40px,
+    pillsBg: $rxd-accentblue-100,
+    pillsColor: $rxd-accentblue-500,
+  ),
+)

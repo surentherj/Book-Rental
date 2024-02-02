@@ -1,0 +1,117 @@
+.form-checkbox {
+  @extend .inline-flex-center;
+  position: relative;
+  padding-right: $two-s;
+  label {
+    font-size: $font-s;
+    color: $grey1;
+    line-height: 1;
+  }
+}
+
+.check_box {
+  -webkit-appearance: none;
+  width: $one-three-s;
+  height: $one-three-s;
+  display: inline-block;
+  background: $white;
+  @include border-radius(2px);
+  & + label {
+    margin-left: $one-s;
+  }
+  &.check_default {
+    border: 1px solid $grey3;
+  }
+  &.check_grid {
+    border: 1px solid $primaryblue;
+  }
+  &:hover {
+    border: 1px solid $primaryblue;
+  }
+  &.check_regular {
+    &:after {
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: -3px;
+      left: 3px;
+      width: 6px;
+      height: 10px;
+      transform: rotate(45deg);
+      border-bottom: 2px solid $white;
+      border-right: 2px solid $white;
+    }
+    &:disabled {
+      background: $white;
+      outline: none;
+      color: $grey5;
+      border: 1px solid $grey5;
+      &:not(:checked),
+      &:disabled + label {
+        color: $grey5;
+      }
+    }
+  }
+  &.check_indeterminate {
+    &:hover {
+      &:after {
+        border-bottom: 2px solid $primaryblue;
+      }
+    }
+    &:disabled {
+      background: $white;
+      outline: none;
+      border: 1px solid $grey3;
+      color: $grey1;
+      &:after {
+        border-bottom: 2px solid $grey5;
+      }
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: -5px;
+      left: 2px;
+      width: $one-s;
+    }
+    &.check_default {
+      &:after {
+        border-bottom: 2px solid $primaryblue;
+      }
+    }
+    &.check_grid {
+      &:after {
+        border-bottom: 2px solid $primaryblue;
+      }
+    }
+  }
+  &:checked {
+    &.check_default {
+      border: 1px solid $primaryblue;
+    }
+    &.check_grid {
+      border: 1px solid $primaryblue;
+    }
+
+    &.check_regular {
+      &.check_default {
+        background-color: $primaryblue;
+      }
+      &.check_grid {
+        background-color: $primaryblue;
+      }
+      &:disabled {
+        background-color: $white;
+        border: 1px solid $grey5;
+        &:disabled + label {
+          color: $grey1;
+        }
+        &:after {
+          border-bottom: 2px solid $grey5;
+          border-right: 2px solid $grey5;
+        }
+      }
+    }
+  }
+}

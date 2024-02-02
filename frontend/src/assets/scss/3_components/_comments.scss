@@ -1,0 +1,209 @@
+// Comments
+.comment-wrapper{
+    @extend .wd-100;
+    background: $white;
+    padding: $two-s;
+    border: 1px solid $border;
+    @include border-radius($half-s);
+    .comment-list{
+        @extend .wd-100;
+        border-bottom: 1px solid $border;
+        color: $grey2;
+        padding: 0 0 $one-half-s 0;
+        margin-bottom: $one-half-s;
+        &.ticket-comment{
+            &:last-of-type{
+                padding-bottom: $one-half-s;
+                border-bottom: 1px solid $border;
+                margin-bottom: $one-half-s;
+            }
+        }
+        &:last-of-type{
+            border-bottom: 0px;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .comment-head{
+            @extend .wd-100;
+            @extend .flex-center;
+            color: $grey1;
+            @media (max-width: 767px){
+                display: block;
+            }
+            .avatar{
+                @media (max-width: 767px){
+                    float: left;
+                }
+            }
+        }
+        .comment-author{
+            float: left;
+            // margin-right: auto;
+            margin-left: $one-s;
+            font-size: $font-s;
+            color: $primary;
+            @media (max-width: 767px){
+                line-height: 35px;
+            }
+        }
+        .comment-body{
+            @extend .wd-100;
+            font-size: $font-s;
+            &.comment-space{
+                margin-top: $one-s;
+                padding-left: 35px;
+                font-size: $font-xs;
+                word-wrap: break-word;
+            }
+        }
+        .comment-date{
+            float: left;
+            font-size: $font-xs;
+            color: $grey2;
+            @media (max-width: 767px){
+                width: 100%;
+                margin-top: $one-s;
+            }
+        }
+    }
+}
+
+.comment-tags{
+    @extend .wd-100;
+    margin-top: $three-s;
+    .comment-tag{
+        @extend .wd-100;
+        margin-bottom: $two-s;
+    }
+    .tag-head{
+        font-size: $font-s;
+        font-weight: $font-medium;
+        color: $grey1;
+    }
+    .each-tag{
+        padding-right: $one-s;
+        max-width: 50%;
+        float: left;
+        margin-top: $one-s;
+        // margin-right: $one-s;
+        cursor: pointer;
+        .tags{
+            max-width: 100%;
+            float: left;
+            padding: $half-s $one-s;
+            font-size: $font-s;
+            @include border-radius(4px);
+            @include wordwrap(100%);
+            &.ticket-tag{
+                background: $lightred;
+            }
+            &.help-tag{
+                background: $bluetint;
+            }
+        }
+    }
+}
+
+// resolution 
+.resolution-list{
+    @extend .wd-100;
+    font-size: $font-s;
+    padding: $two-s $one-s;
+    border-bottom: 1px solid $border;
+    margin-bottom: $one-s;
+    &:last-of-type{
+        border-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    .resolution-left{
+        width: 25%;
+        float: left;
+        color: $grey3;
+        @media (max-width: 768px){
+            width: 50%;
+        }
+    }
+    .resolution-right{
+        width: 70%;
+        float: left;
+        color: $grey1;
+    }
+    @media (max-width: 768px){
+        width: 50%;
+    }
+}
+
+// Quill
+.quill{
+    width: 100%;
+    float: left;
+    border: 1px solid $border;
+    @include border-radius($half-s);
+    padding: $two-s;
+    .ql-toolbar{
+        padding: 0 !important;
+        border: 0 !important;
+        padding-bottom: $two-s !important;
+        border-bottom: 1px solid $border !important;
+    }
+    .ql-container{
+        border: 0 !important;
+        padding: $two-s 0 !important;
+        .ql-editor{
+            padding: 0 !important;
+        }
+    }
+}
+
+
+// Activity
+.activity-list{
+    width: 100%;
+    float: left;
+    position: relative;
+    &:before{
+        width: 1px;
+        height: 100%;
+        content: "";
+        background-color: $border;
+        display: inline-block;
+        position: absolute;
+        left: 20%;
+        top: 0;
+    }
+    &:after{
+        width: 12px;
+        height: 12px;
+        content: "";
+        display: inline-block;
+        background: $white;
+        border: 2px solid $primary;
+        @include border-radius(50%);
+        position: absolute;
+        left: calc(20% - 6px);
+        top: 4px;
+    }
+    .activity-month{
+        width: 25%;
+        float: left;
+        font-size: $font-xxs;
+    }
+    .activity-head{
+        width: 75%;
+        float: left;
+    }
+    .activity-author{
+        font-size: $font-xs;
+    }
+    .activity-body{
+        width: 75%;
+        float: right;
+        font-size: $font-xs;
+        margin-top: $one-s;
+        margin-bottom: $two-s;
+        color: $grey2;
+    }
+    .activity-date{
+        font-size: $font-xxs;
+    }
+}

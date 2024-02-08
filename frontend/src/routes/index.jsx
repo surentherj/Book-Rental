@@ -5,6 +5,7 @@ import Login from "../pages/login/login";
 import Page500 from "../pages/redirects/page500";
 import ProtectedContent from "./protectedContent";
 import ProtectedRoute from "./protectedRoute";
+import MainPlayer from "../pages/mainPlayer";
 
 const AppRouter = ({ isAuthenticated, loginWithCustom, logout }) => {
   return (
@@ -16,6 +17,11 @@ const AppRouter = ({ isAuthenticated, loginWithCustom, logout }) => {
             loginWithCustom={loginWithCustom}
           />
         </Route>
+        
+        <Route exact path="/player">
+          <MainPlayer />
+        </Route>
+        
         <Route exact path="/500" component={Page500} />
         <ProtectedRoute
           path="*"

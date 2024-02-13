@@ -1,33 +1,26 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from "react";
 
-const PlayerComponent = ({ videoSrc, onTimeUpdate, showPromotion }) => {
-    const videoRef = useRef(null);
+const PlayerComponent = ({ videoSrc, onVideoUpdate, videoRef }) => {
+  useEffect(() => {
+    if (videoRef?.current) {
+      const video = videoRef.current;
+      const handleVideoEvent = () => {
+        onVideoUpdate(video);
+      };
 
-    useEffect(() => {
-        const video = videoRef.current;
-        const handleTimeUpdate = () => {
-            onTimeUpdate(video.currentTime);
-        };
-        video.addEventListener('timeupdate', handleTimeUpdate);
-        return () => {
-            video.removeEventListener('timeupdate', handleTimeUpdate);
-        };
-    }, [onTimeUpdate]);
+      video.addEventListener("timeupdate", handleVideoEvent);
 
-    useEffect(() => {
-        const video = videoRef.current;
-        if (showPromotion) {
-            video.pause();
-        } else {
-            video.play();
-        }
-    }, [showPromotion]);
+      return () => {
+        video.removeEventListener("timeupdate", handleVideoEvent);
+      };
+    }
+  }, [onVideoUpdate]);
 
-    return (
-        <div>
-            <video ref={videoRef} src={videoSrc} controls />
-        </div>
-    );
+  return (
+    <div>
+      <video ref={videoRef} src={videoSrc} controls />
+    </div>
+  );
 };
 
 export default PlayerComponent;
